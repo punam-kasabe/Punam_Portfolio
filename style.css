@@ -1,0 +1,488 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  color: white;
+  scroll-behavior: smooth;
+}
+.carousel-3d {
+  display: flex;
+  justify-content: center;
+  perspective: 1200px;
+  margin-top: 30px;
+  position: relative;
+  gap: 20px;
+}
+
+.carousel-card {
+  width: 220px;
+  height: 150px;
+  background: linear-gradient(135deg, #6c63ff, #928dff);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0.3;
+  transform: scale(0.85) rotateY(25deg);
+  backface-visibility: hidden;
+}
+
+.carousel-card.active {
+  transform: scale(1.05) rotateY(0deg);
+  opacity: 1;
+  z-index: 2;
+  background: linear-gradient(135deg, #5e5bff, #8f88ff);
+}
+
+header.animated-header,
+footer.animated-footer {
+  background: linear-gradient(90deg, #00ffff, #000);
+  text-align: center;
+  padding: 30px;
+  animation: slideDown 1s ease;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #00ffff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00ffff;
+  display: inline-block;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.skill-icon {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  width: 100px;
+  border-radius: 10px;
+  text-align: center;
+}
+/* Certification section styling without background */
+section.certifications {
+  padding: 30px 20px;
+  margin: 40px 0;
+  border-radius: 8px;
+  /* Removed background-color and box-shadow for transparent look */
+}
+
+section.certifications h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #00ffff;
+}
+
+section.certifications ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Slide-in animation for section */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease forwards;
+}
+
+/* Fade and slide up animation for list items */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.certifications ul li {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease forwards;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Stagger animation delays */
+section.certifications ul li:nth-child(1) { animation-delay: 0.2s; }
+section.certifications ul li:nth-child(2) { animation-delay: 0.4s; }
+section.certifications ul li:nth-child(3) { animation-delay: 0.6s; }
+section.certifications ul li:nth-child(4) { animation-delay: 0.8s; }
+section.certifications ul li:nth-child(5) { animation-delay: 1s; }
+section.certifications ul li:nth-child(6) { animation-delay: 1.2s; }
+
+/* Hover effect */
+section.certifications ul li:hover {
+  transform: translateY(-6px) scale(1.05);
+  color: #c284fc;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+/* Skill icons container */
+.skills-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Skill icon block */
+.skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Image styling */
+.skill-icon img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Text label */
+.skill-icon span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.skill-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon:hover img {
+  transform: rotate(5deg);
+}
+
+.skill-icon:hover span {
+  color: #007bff; /* Blue on hover */
+}
+
+/* Optional: pulse animation if not already defined */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Slide-in animation for section */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease forwards;
+}
+
+/* Fade and slide up animation for list items */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+.skill-icon span {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Pulse animation */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+
+/* Apply animation to each <li> with a delay */
+section.certifications ul li {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+/* Use nth-child to stagger animations */
+section.certifications ul li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+section.certifications ul li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+section.certifications ul li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+section.certifications ul li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+section.certifications ul li:nth-child(5) {
+  animation-delay: 1s;
+}
+section.certifications ul li:nth-child(6) {
+  animation-delay: 1.2s;
+}
+/* Hover effect on certification list items */
+section.certifications ul li {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer; /* Show pointer to indicate it's interactive */
+}
+
+section.certifications ul li:hover {
+  transform: translateY(-6px) scale(1.05);
+  color: #007bff; /* Change this to any highlight color you like */
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease forwards;
+}
+
+.skill-icon img {
+  width: 50px;
+  height: 50px;
+  animation: pulse 2s infinite;
+}
+
+.skill-icon span {
+  margin-top: 8px;
+  display: block;
+}
+
+.carousel-3d {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.carousel-card {
+  width: 250px;
+  height: 150px;
+  background: linear-gradient(135deg, #00f7ff, #004e92);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 15px;
+  transform: rotateY(90deg);
+  opacity: 0;
+  transition: all 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-card.active {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.download-btn {
+  display: inline-block;
+  background: #00ffff;
+  color: #000;
+  padding: 12px 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,255,255,0.3);
+}
+
+.download-btn:hover {
+  background: #00cccc;
+  color: #fff;
+  box-shadow: 0 0 25px #00ffff;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #bbb;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); box-shadow: 0 0 15px #00ffff; }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-3d {
+    flex-direction: column;
+    align-items: center;
+  }
+}.footer {
+  background-color: #111;
+  color: #eee;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 60px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #0d6efd;
+}
+
+.footer-center a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-center a:hover {
+  color: #3d7cf1;
+}
+
+.footer-right a {
+  margin-left: 15px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.footer-right img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-right a:hover {
+  transform: scale(1.2);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
